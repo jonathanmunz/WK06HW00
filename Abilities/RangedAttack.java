@@ -1,8 +1,14 @@
-public class RangedAttack implements Attack{
+package Abilities;
+
+import Abilities.Attack;
+import Monsters.Monster;
+
+public class RangedAttack implements Attack {
 
         Monster attacker;
 
         public RangedAttack(Monster attacker) {
+
             this.attacker = attacker;
         }
 
@@ -10,6 +16,6 @@ public class RangedAttack implements Attack{
         public Integer attack(Monster target) {
             String message = attacker + " uses a ranged attack on " + target;
             System.out.println(message);
-            return null;
+            return attacker.getAgi() - target.getAgi();
         }
 }
